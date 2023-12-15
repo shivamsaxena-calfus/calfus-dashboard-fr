@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import DCard from './component/DCard'
+import '@mantine/core/styles.css';
+// import PiChart from './component/ExcelChart';
+import BarGraph from './component/BarGraph';
+import Chart from './component/Chart';
+import { Grid } from '@mantine/core';
+// import ExcelReader from './component/PieChartComponent';
+import ExcelChart from './component/ExcelChart';
+import ExcelReader from './component/ExcelReader';
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <DCard />
+      <br />
+      <hr />
+      <br />
+      <Grid>
+        <Grid.Col span={4}><ExcelChart /></Grid.Col>
+        <Grid.Col span={4}><BarGraph /></Grid.Col>
+        <Grid.Col span={4}><Chart /></Grid.Col>
+      </Grid>
+      <br />
+      <ExcelReader />      
+
+
+
+      
+      
+      
+    </>
   );
 }
 
